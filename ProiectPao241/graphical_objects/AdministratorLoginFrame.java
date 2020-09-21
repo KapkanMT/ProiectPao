@@ -112,22 +112,16 @@ public class AdministratorLoginFrame extends JFrame{
 		        	}
 					scanner.close();
 				} catch (IOException e2) {
-					// TODO Auto-generated catch block
 					e2.printStackTrace();
 				} catch (NoSuchAlgorithmException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (NoSuchPaddingException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (InvalidKeyException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (IllegalBlockSizeException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (BadPaddingException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 				
