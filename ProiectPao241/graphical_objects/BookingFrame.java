@@ -48,8 +48,7 @@ public class BookingFrame extends JFrame{
 	private static JPanel movie_info;
 	private static JPanel client_info;
 
-	class GridButton extends JButton { //auxiliary class for storing the coordinates
-									   //of a button in a GridLayout
+	class GridButton extends JButton {
 		public final int row;		   
 		public final int column;
 		
@@ -144,7 +143,7 @@ public class BookingFrame extends JFrame{
 	
 		Map<Movie, Room> map = new HashMap<Movie, Room>();
 		for (int i = 0; i < movie_list.size(); i ++)
-			map.put(movie_list.get(i), cinema.getHall().get(new Random().nextInt(cinema.getNr_of_rooms()))); //it links every movie with a random room in our static cinema field
+			map.put(movie_list.get(i), cinema.getHall().get(new Random().nextInt(cinema.getNr_of_rooms())));
 		
 		JComboBox<Utility.Type> type_field = new JComboBox<Utility.Type>();
 		JTextField first_name_field = new JTextField(8);
@@ -246,7 +245,7 @@ public class BookingFrame extends JFrame{
 				if(e.SELECTED == 1 ) {    //if the user selected an item
 					JComboBox<Movie> source = (JComboBox<Movie>) e.getSource();
 					root_frame.repaint();
-					if (source.getSelectedItem() == null) {  //if the field is empty
+					if (source.getSelectedItem() == null) { 
 		
 						matrix.removeAll();
 						matrix.show_image = true;
@@ -275,7 +274,7 @@ public class BookingFrame extends JFrame{
 							button.addActionListener(new ActionListener() {
 
 								@Override
-								public void actionPerformed(ActionEvent e) { //when a grid button is pressed
+								public void actionPerformed(ActionEvent e) {
 									GridButton source = (GridButton) e.getSource();
 									if (source.getBackground() == Color.GREEN) {
 										seat_is_selected = true;
@@ -392,8 +391,8 @@ public class BookingFrame extends JFrame{
 					
 					matrix.buttons[selected_row][selected_column].setBackground(Color.RED);  //we set the red color of the selected seat in matrix 
 					Ticket.setNr_of_tickets(Ticket.getNr_of_tickets());
-					root_frame.dispose(); 	//we close the booking frame
-					new TicketFrame(ticket);//visual representation of the reserved ticket
+					root_frame.dispose();
+					new TicketFrame(ticket);
 				}
 			}
 		});
@@ -424,7 +423,6 @@ public class BookingFrame extends JFrame{
 			int nr = Files.readAllLines(Paths.get("data/tickets.csv")).size();
 			Ticket.setNr_of_tickets(nr);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
