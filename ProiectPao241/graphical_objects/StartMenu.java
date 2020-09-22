@@ -59,7 +59,7 @@ public class StartMenu extends JPanel {
 	}
 
 	@Override
-	public void paintComponent(Graphics g) { //set the background of the panel
+	public void paintComponent(Graphics g) {
 		
 		try {
 			g.drawImage(ImageIO.read(new File("./images/gradient.jpg")), 0, 0, null);
