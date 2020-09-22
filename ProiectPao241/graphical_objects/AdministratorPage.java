@@ -96,7 +96,7 @@ public class AdministratorPage extends JFrame{
         change_pass.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         change_pass.setLocation(400, 200);
         
-        bfilme.addActionListener(new ActionListener() { //add movies
+        bfilme.addActionListener(new ActionListener() {
 
         	public void actionPerformed(ActionEvent e) {      
 
@@ -189,7 +189,7 @@ public class AdministratorPage extends JFrame{
 
         });
            
-        afilme.addActionListener(new ActionListener(){ //delete movie from the list
+        afilme.addActionListener(new ActionListener(){ 
         	
         	public void actionPerformed(ActionEvent e) {
         		
@@ -232,7 +232,7 @@ public class AdministratorPage extends JFrame{
     		                 if(it.getName().equals(name)) {
     		                        filme.remove(it);
     		                        try {
-										FileWriter writer = new FileWriter("data/movies.csv"); //deleting the content of the file
+										FileWriter writer = new FileWriter("data/movies.csv");
 										Utility.write_to_file("data/movies.csv", filme);
 										JOptionPane.showMessageDialog(stergefilme, "The movie was deleted from the list..");
 	    		                        stergefilme.dispose();
@@ -328,22 +328,16 @@ public class AdministratorPage extends JFrame{
 				        		JOptionPane.showMessageDialog(change_pass, "Password changed succesfully!");
 				        		change_pass.dispose();
 							} catch (IOException e1) {
-								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							} catch (NoSuchAlgorithmException e1) {
-								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							} catch (NoSuchPaddingException e1) {
-								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							} catch (InvalidKeyException e1) {
-								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							} catch (IllegalBlockSizeException e1) {
-								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							} catch (BadPaddingException e1) {
-								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							}
 							
