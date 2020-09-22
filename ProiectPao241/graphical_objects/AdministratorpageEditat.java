@@ -56,7 +56,7 @@ public class AdministratorPage extends JFrame{
 	modificabilete.setLocation(400, 200);
 
         
-        bfilme.addActionListener(new ActionListener() { //add movies
+        bfilme.addActionListener(new ActionListener() {
 
         	public void actionPerformed(ActionEvent e) {      
 
@@ -295,7 +295,7 @@ public class AdministratorPage extends JFrame{
   		                 	if(it.getId().equals(name)) {
   		                        	camere.remove(it);
   		                        	try {
-										FileWriter writer = new FileWriter("data/room.csv"); //deleting the content of the file
+										FileWriter writer = new FileWriter("data/room.csv");
 										Utility.write_to_file("data/room.csv", camere);
 										JOptionPane.showMessageDialog(stergefilme, "The room was deleted from the list..");
 	    		                        stergecamere.dispose();
