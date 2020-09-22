@@ -71,7 +71,7 @@ public class TicketFrame extends JFrame {
 			g2.drawString(key_code, 60, 60);
 			g2.rotate(Math.toRadians(-180.0), 125, -90);
 			g2.drawString(key_code, 23, 60);
-			g2.rotate(Math.toRadians(90.0), 50, 50); //we switch to normal orientation
+			g2.rotate(Math.toRadians(90.0), 50, 50);
 			
 			String[] fields_names = {"Movie: ", "Buyer: ", "Exc: ", "Room: ", "Seat: ", "Price: "};
 			if (fields_names.length != fields_values.length)
