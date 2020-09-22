@@ -22,15 +22,14 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
-//just an auxiliary abstract class to store different utility often used functions and variables
 public abstract class Utility {
 	
-	private Utility() { }    //to prevent instantiation
+	private Utility() { } 
 	
-	public static final SimpleDateFormat date_format = new SimpleDateFormat("E dd.MM hh:mm a"); //custom date format
-	public static final SimpleDateFormat hour_format = new SimpleDateFormat("hh:mm");           //custom hour format
-	public static enum Exc {STUDENT, RETIRED, DISABLED;}                  //exception, used in Client class
-	public static enum Type {ACTION, ADVENTURE, THRILLER, COMEDY, DRAMA;} //type of a movie, used in Movie class
+	public static final SimpleDateFormat date_format = new SimpleDateFormat("E dd.MM hh:mm a"); 
+	public static final SimpleDateFormat hour_format = new SimpleDateFormat("hh:mm");           
+	public static enum Exc {STUDENT, RETIRED, DISABLED;}                  
+	public static enum Type {ACTION, ADVENTURE, THRILLER, COMEDY, DRAMA;} 
 
 	public static String fill_zeros (int id) {       //it fills with 0s in the format: #CCC
 		String nr = String.valueOf(id); 
@@ -58,13 +57,12 @@ public abstract class Utility {
 				if (values.length == fields.length) {
 					for (int i = 0; i < fields.length; i ++) {
 						if (!values[i].isBlank()) {
-							//object = (T) Class.forName(type.getName()).newInstance();
 							Object value = null;   
 							String name = Character.toUpperCase(fields[i].getType().getSimpleName().charAt(0)) + fields[i].getType().getSimpleName().substring(1); 
 							if (String.class.equals(fields[i].getType())) 
 								fields[i].set(object, values[i]);
 							else if (char.class.equals(fields[i].getType())) {
-								if (values[i].length() == 1) 	//we make sure that the string has length of 1 to "cast" to char type
+								if (values[i].length() == 1)
 									fields[i].set(object, values[i].charAt(0));
 								else 
 									fields[i].set(object, null);
@@ -134,7 +132,7 @@ public abstract class Utility {
 		try {
 			FileWriter writer = new FileWriter(path, true /*<-append mode*/);
 			Field[] fields;
-			if (objects.get(0).getClass().getSuperclass().isInstance(new Object()))   //a way to check if the object is not inherited
+			if (objects.get(0).getClass().getSuperclass().isInstance(new Object()))
 				fields = objects.get(0).getClass().getDeclaredFields();
 			else
 				fields = objects.get(0).getClass().getSuperclass().getDeclaredFields();
