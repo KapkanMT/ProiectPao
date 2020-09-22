@@ -38,7 +38,7 @@ public class Cinema {
 	}
 	
 	public Ticket reserve_seat (int row, int column, Room room, Movie movie, Client client) {
-		if (!room.isOccupied(row, column)) { 		//if the seat is not occupied
+		if (!room.isOccupied(row, column)) { 
 			room.getSeats()[row][column] = true;
 			Ticket reserved_ticket = new Ticket(movie, client, new OccupiedSeat(room.getId(), row, column));
 			return reserved_ticket;
